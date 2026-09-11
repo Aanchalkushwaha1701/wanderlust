@@ -1,0 +1,72 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+    <br> <br>
+    <div class="row">
+        <div class="col-8 offset-2">
+    <h1>Edit your listing</h1>
+    <form method="post" 
+        action="/listings/<%=listing._id%>?_method=PUT" 
+        enctype="multipart/form-data" 
+        class="needs-validation">
+        <div>
+            <label for="title" class="form-label">Title</label>
+        <input type="text" name="listing[title]"  
+        class="form-control" value="<%=listing.title%>" required>
+        <div class="valid-feedback">Title should be catchy!!</div>
+        </div>
+        <div>
+            <label for="description" class="form-label">Description</label>
+        <textarea name="listing[description]"  
+        class="form-control" required><%=listing.description%></textarea>
+        <div class="invalid-feedback">Please enter a short description!!</div>
+        </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+        <input type="number"  class="form-control"
+        name="listing[price]" value="<%=listing.price%>" required>
+        <div class="invalid-feedback">Price should be a number</div>
+        </div>
+    
+        <div class="mb-3 col-md-8">
+            <label for="location" class="form-label">Location</label>
+        <input type="text" class="form-control"
+         name="listing[location]" value="<%=listing.location%>" required>
+         <div class="invalid-feedback">Please  enter correct Location</div>
+       </div> 
+       </div>
+
+       <div>
+        <label for="country" class="form-label">Country</label>
+        <input type="text" class="form-control" 
+        name="listing[country]" value="<%=listing.country%>" required>
+        <div class="invalid-feedback">Please enter your country name</div>
+        </div>
+
+        <br>
+          <div >
+            <label for="image" class="form-label">Original Image</label>
+            <br>
+            
+            <img src="<%=originalImageUrl%>">
+         <!-- <div class="invalid-feedback">Please enter correct image url/link</div> -->
+    </div>
+
+        <div>
+            <label for="image" class="form-label">Upload Image</label>
+        <input type="file" 
+        class="form-control"
+         name="listing[image]" 
+         placeholder="enter image url/link">
+         <!-- <div class="invalid-feedback">Please enter correct image url/link</div> -->
+    </div>
+
+    <br> <br>
+        <button class="btn btn-dark add-btn">Edit</button>
+        
+    </form>
+    </div>
+    </div>
+    <br>
+    <br>
+</body>
