@@ -29,4 +29,4 @@ A full-stack travel listing web application where users can explore, create, edi
 
 ## 📌 Live Application
 
-**[Open the Live Website →](YOUR_RENDER_URL/listings)**
+**[Open the Live Website →](https://wanderlust-2-t8ct.onrender.com/listings)**
