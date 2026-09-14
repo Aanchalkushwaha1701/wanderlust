@@ -28,7 +28,11 @@ const reviewRouter=require("./routes/review.js");
 const userRouter=require("./routes/user.js");
 
 const dbUrl=process.env.ATLASDB;
-console.log("ATLASDB loaded:", !!dbUrl);
+console.log(
+  "Atlas env keys:",
+  Object.keys(process.env).filter(k => k.toUpperCase().includes("ATLAS"))
+);
+console.log("ATLASDB length:", dbUrl ? dbUrl.length : 0);
 
  main().then(()=>{
     console.log("connected to db");
